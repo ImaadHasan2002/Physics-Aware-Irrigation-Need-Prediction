@@ -46,6 +46,25 @@ stacking; full leaderboards are in [`models/*_cv_leaderboard*.csv`](models). See
 [`reports/figures`](reports/figures) for the public-leaderboard score distribution and
 model-comparison summary tables.
 
+## Analytics
+
+**Public-leaderboard score distribution (top 1000 teams).** The field is bimodal: one cluster
+sits around 0.970, the other around 0.980.
+
+![Public LB score distribution](reports/figures/lb_top1000_distribution.png)
+
+**Top features by mean |SHAP|.** Soil moisture and crop growth stage matter most. Two of the
+agronomic features (`Kc`, `Heat_Stress`) also make the top 6.
+
+<img src="reports/figures/shap_feature_importance_table.png" width="600" />
+
+**Raw vs. physics-derived feature distributions.** The first two rows are the raw sensor
+columns. The rows below them are the engineered features (`SVP`, `VPD`, `ETo`, `Kc`, `ETc`,
+effective rainfall, soil AWC, and so on). The full grid of all 50+ columns is in
+[`numeric_feature_distributions.png`](reports/figures/numeric_feature_distributions.png).
+
+![Engineered feature distributions](reports/figures/engineered_feature_distributions.png)
+
 ## Project layout
 
 ```
